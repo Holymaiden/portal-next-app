@@ -30,13 +30,13 @@ export const AuthContextProvider: FC<IAuthContextProviderProps> = ({
   // @ts-ignore
   const [user, setUser] = useState<string>(
     typeof window !== "undefined"
-      ? String(localStorage?.getItem("facit_authUsername"))
+      ? String(localStorage?.getItem("portal_authUsername"))
       : ""
   );
   const [userData, setUserData] = useState<Partial<IUserProps>>({});
 
   useEffect(() => {
-    localStorage.setItem("facit_authUsername", user);
+    localStorage.setItem("portal_authUsername", user);
   }, [user]);
 
   useEffect(() => {

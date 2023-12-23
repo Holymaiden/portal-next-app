@@ -52,13 +52,13 @@ export const ThemeContextProvider: FC<IThemeContextProviderProps> = ({
 
   const [darkModeStatus, setDarkModeStatus] = useState(
     typeof window !== "undefined" &&
-      localStorage.getItem("facit_darkModeStatus")
-      ? localStorage.getItem("facit_darkModeStatus") === "true"
+      localStorage.getItem("portal_darkModeStatus")
+      ? localStorage.getItem("portal_darkModeStatus") === "true"
       : process.env.NEXT_PUBLIC_DARK_MODE === "true"
   );
 
   useEffect(() => {
-    localStorage.setItem("facit_darkModeStatus", darkModeStatus.toString());
+    localStorage.setItem("portal_darkModeStatus", darkModeStatus.toString());
   }, [darkModeStatus]);
 
   const [fullScreenStatus, setFullScreenStatus] = useState(false);
@@ -67,14 +67,14 @@ export const ThemeContextProvider: FC<IThemeContextProviderProps> = ({
   const [rightMenuStatus, setRightMenuStatus] = useState(false);
 
   const [asideStatus, setAsideStatus] = useState(
-    typeof window !== "undefined" && localStorage.getItem("facit_asideStatus")
-      ? localStorage.getItem("facit_asideStatus") === "true"
+    typeof window !== "undefined" && localStorage.getItem("portal_asideStatus")
+      ? localStorage.getItem("portal_asideStatus") === "true"
       : // @ts-ignore
         deviceScreen?.width >=
           Number(process.env.NEXT_PUBLIC_ASIDE_MINIMIZE_BREAKPOINT_SIZE)
   );
   useEffect(() => {
-    localStorage.setItem("facit_asideStatus", asideStatus?.toString());
+    localStorage.setItem("portal_asideStatus", asideStatus?.toString());
   }, [asideStatus]);
 
   const [rightPanel, setRightPanel] = useState(false);
@@ -85,7 +85,7 @@ export const ThemeContextProvider: FC<IThemeContextProviderProps> = ({
       (deviceScreen?.width || 0) >=
       Number(process.env.NEXT_PUBLIC_ASIDE_MINIMIZE_BREAKPOINT_SIZE)
     ) {
-      if (localStorage.getItem("facit_asideStatus") === "true")
+      if (localStorage.getItem("portal_asideStatus") === "true")
         setAsideStatus(true);
       setLeftMenuStatus(false);
       setRightMenuStatus(false);

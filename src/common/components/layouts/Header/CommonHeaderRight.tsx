@@ -54,13 +54,13 @@ const CommonHeaderRight: FC<ICommonHeaderRightProps> = ({
         {/* Tour Modal */}
         {mounted && localStorage.getItem("tourModalStarted") === "shown" && (
           <div className="col-auto position-relative">
-            <Popovers trigger="hover" desc='Start the "Facit" tour'>
+            <Popovers trigger="hover" desc='Start the "Portal" tour'>
               <Button
                 // eslint-disable-next-line react/jsx-props-no-spreading
                 {...styledBtn}
                 icon="Tour"
                 onClick={() => setIsOpen(true)}
-                aria-label='Start the "Facit" tour'
+                aria-label='Start the "Portal" tour'
               />
             </Popovers>
             <Icon

@@ -30,7 +30,7 @@ const Sidebar = () => {
 
   const [doc, setDoc] = useState(
     (typeof window !== "undefined" &&
-      localStorage.getItem("facit_asideDocStatus") === "true") ||
+      localStorage.getItem("portal_asideDocStatus") === "true") ||
       false
   );
 
@@ -78,7 +78,7 @@ const Sidebar = () => {
                 isLight
                 className="w-100"
                 onClick={() => {
-                  localStorage.setItem("facit_asideDocStatus", "false");
+                  localStorage.setItem("portal_asideDocStatus", "false");
                   setDoc(false);
                 }}
               >
@@ -95,7 +95,7 @@ const Sidebar = () => {
               role="presentation"
               className="navigation-item cursor-pointer"
               onClick={() => {
-                localStorage.setItem("facit_asideDocStatus", String(!doc));
+                localStorage.setItem("portal_asideDocStatus", String(!doc));
                 setDoc(!doc);
               }}
               data-tour="documentation"
