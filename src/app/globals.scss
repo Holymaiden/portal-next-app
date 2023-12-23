@@ -1,0 +1,17 @@
+/**
+ *	Styles
+ */
+
+@import "@/common/styles/settings/index";
+@import "@/common/styles/tools/index";
+@import "@/common/styles/generic/index";
+@import "@/common/styles/elements/index";
+@import "@/common/styles/objects/index";
+@import "@/common/styles/components/index";
+@import "@/common/styles/vendors/index";
+@import "@/common/styles/utilities/index";
+
+// Utilities
+@import "!/bootstrap/scss/utilities/api";
+
+@import "@/common/styles/custom/index";
