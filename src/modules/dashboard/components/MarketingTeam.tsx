@@ -1,0 +1,85 @@
+import Avatar, { AvatarGroup } from "@/common/components/elements/Avatar";
+import Button from "@/common/components/elements/bootstrap/Button";
+import Card, {
+  CardActions,
+  CardBody,
+  CardHeader,
+  CardLabel,
+  CardSubTitle,
+  CardTitle,
+} from "@/common/components/elements/bootstrap/Card";
+import USERS from "@/common/data/userDummyData";
+import useDarkMode from "@/common/hooks/useDarkMode";
+import { useRouter } from "next/navigation";
+import { useCallback } from "react";
+
+const DashboardMarketingTeam = () => {
+  const { darkModeStatus } = useDarkMode();
+
+  const router = useRouter();
+  const handleOnClickToEmployeeListPage = useCallback(
+    () => router.push(`/`),
+    [router]
+  );
+
+  return (
+    <Card stretch>
+      <CardHeader className="bg-transparent">
+        <CardLabel>
+          <CardTitle tag="h4" className="h5">
+            Marketing Team
+          </CardTitle>
+          <CardSubTitle tag="h5" className="h6 text-muted">
+            There is a meeting at 12 of next clock.
+          </CardSubTitle>
+        </CardLabel>
+        <CardActions>
+          <Button
+            icon="ArrowForwardIos"
+            aria-label="Read More"
+            hoverShadow="default"
+            color={darkModeStatus ? "dark" : undefined}
+            onClick={handleOnClickToEmployeeListPage}
+          />
+        </CardActions>
+      </CardHeader>
+      <CardBody>
+        <AvatarGroup>
+          <Avatar
+            src={USERS.GRACE.src}
+            userName={`${USERS.GRACE.name} ${USERS.GRACE.surname}`}
+            color={USERS.GRACE.color}
+          />
+          <Avatar
+            src={USERS.SAM.src}
+            userName={`${USERS.SAM.name} ${USERS.SAM.surname}`}
+            color={USERS.SAM.color}
+          />
+          <Avatar
+            src={USERS.CHLOE.src}
+            userName={`${USERS.CHLOE.name} ${USERS.CHLOE.surname}`}
+            color={USERS.CHLOE.color}
+          />
+
+          <Avatar
+            src={USERS.JANE.src}
+            userName={`${USERS.JANE.name} ${USERS.JANE.surname}`}
+            color={USERS.JANE.color}
+          />
+          <Avatar
+            src={USERS.JOHN.src}
+            userName={`${USERS.JOHN.name} ${USERS.JOHN.surname}`}
+            color={USERS.JOHN.color}
+          />
+          <Avatar
+            src={USERS.RYAN.src}
+            userName={`${USERS.RYAN.name} ${USERS.RYAN.surname}`}
+            color={USERS.RYAN.color}
+          />
+        </AvatarGroup>
+      </CardBody>
+    </Card>
+  );
+};
+
+export default DashboardMarketingTeam;
